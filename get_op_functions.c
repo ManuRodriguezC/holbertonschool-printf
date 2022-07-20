@@ -5,7 +5,7 @@
  *
  *
  */
-int (*get_op_functions(char c))(char *, va_list,int *)
+/*int (*get_op_functions(char c))(char *, va_list,int *)
 {
 	funtions ops[] = {
 			{"c", op_char},
@@ -19,4 +19,4 @@ int (*get_op_functions(char c))(char *, va_list,int *)
 			return (ops[i].f)
 			i++;
 	return (NULL);
-}
+}*/
