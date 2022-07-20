@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * Authors: Esteban Rodriguez - Marlon Amado - 2022
+ * _printf - Entru point.
+ * Description: Funtion that prints string format.
  *
- * _printf - Entry point
- * Description: Function that prints input to output
- * @format: Check format
- * Return: len
+ * @format: arguments function
+ * Return: print_len
  */
 
 int _printf(const char *format, ...)
@@ -15,7 +14,9 @@ int _printf(const char *format, ...)
 	char buffer[2048];
 
 	va_list ap;
+
 	va_start(ap, format);
+
 	while (format && format[i])
 	{
 		buffer[print_len] = format[i];
@@ -24,5 +25,5 @@ int _printf(const char *format, ...)
 	}
 	write(1, buffer, print_len);
 	va_end(ap);
-	//return (count);
+	return (print_len);
 }
