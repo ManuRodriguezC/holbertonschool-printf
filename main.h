@@ -18,7 +18,7 @@ void op_char(char *buffer, va_list ap, int*bf_count);
 typedef struct functions
 {
 	char *op;
-	int (*f)(char *, va_list; int *);
+	void (*f)(char *, va_list; int *);
 
 }functions;
 
