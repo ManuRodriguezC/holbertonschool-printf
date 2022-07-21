@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 			}
 			else
 				op_functions(buffer, ap, &bf_count);
-			i++
+			i++;
 			continue;
 		}
 		buffer[bf_count] = format[i];
