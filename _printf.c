@@ -10,20 +10,43 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	size_t print_len = 0;
-	char buffer[2048];
-
+	size_t bf_count = 0;
+	char buffer[1024];
+	void (*op_function)(char *, va_list, int *);
 	va_list ap;
 
 	va_start(ap, format);
 
 	while (format && format[i])
 	{
-		buffer[print_len] = format[i];
-		print_len += 1;
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '\0')
+				continue;
+
+			op_functions = get_op_functions(format[i + 1]);
+			if (op_functions == NULL)
+			{
+				buffer[bf_count] = format[i];
+
+				if (format[i + 1] != '\0')
+				{
+					buffer[[bf_count] + 1] = format[i + 1];
+					bf_count += 2;
+				}
+				else
+					bf_count++;
+			}
+			else
+				op_functions(buffer, ap, &bf_count);
+			i++
+			continue;
+		}
+		buffer[bf_count] = format[i];
+		bf_count += 1;
 		i++;
 	}
-	write(1, buffer, print_len);
+	write(1, buffer, bf_count);
 	va_end(ap);
-	return (print_len);
+	return (bf_count);
 }

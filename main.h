@@ -10,19 +10,17 @@
 
 /* Prototypes */
 int _printf(const char *format, ...);
+void op_string(char *buffer, va_list ap, int *bf_count);
+void op_char(char *buffer, va_list ap, int*bf_count);
 
 
 /* Structure */
-/*typedef struct functions
+typedef struct functions
 {
 	char *op;
 	void (*f)(char *, va_list; int *);
 
-}functions;*/
-
-
-/* Macros */
-
+}functions;
 
 
 #endif
