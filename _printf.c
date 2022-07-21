@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, bf_count = 0;
-	char *buffer;
+	char *buffer = NULL;
 	void (*op_functions)(char *, va_list, int *);
 	va_list ap;
 
@@ -27,9 +27,9 @@ int _printf(const char *format, ...)
 			{
 				buffer[bf_count] = format[i];
 
-				if (format[i + 1] != '\0')
+				if (format[i + 1] != '%')
 				{
-					buffer[[bf_count] + 1] = format[i + 1];
+					buffer[bf_count + 1] = format[i + 1];
 					bf_count += 2;
 				}
 				else
