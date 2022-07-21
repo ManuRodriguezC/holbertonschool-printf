@@ -18,7 +18,7 @@ int (*get_op_functions(char c))(char *, va_list, int *);
 typedef struct functions
 {
 	char *op;
-	void (*f)(char *, va_list; int *);
+	void (*f)(char *, va_list, int *);
 
 } functions;
 
