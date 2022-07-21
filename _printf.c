@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (!format[i])
 		return (0);
-	while (format && format[i])
+	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		buffer[bf_count] = format[i];
-		bf_count += 1, i++;
+		bf_count++;
 	}
 	va_end(ap), write(1, buffer, bf_count), free(buffer);
 	return (bf_count);
