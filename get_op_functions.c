@@ -10,7 +10,7 @@
  */
 
 
-int (*get_op_functions(char c))(char *, va_list, int *)
+void (*get_op_functions(char c))(char *, va_list, int *)
 {
 	functions ops[] = {
 			{"c", op_char},

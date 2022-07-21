@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format), buffer = malloc(sizeof(char) * 1024);
-	for (; format[i] != '\0'; i++)
+	while (format && format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 		}
 		buffer[bf_count] = format[i];
 		bf_count += 1;
+		i++;
 	}
 	write(1, buffer, bf_count);
 	va_end(ap);
