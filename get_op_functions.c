@@ -19,8 +19,8 @@ int (*get_op_functions(char c))(char *, va_list, int *)
 	};
 
 	while (ops[i].op != '\0')
-		if (strcmp(ops[i].op, c) == 0)
+		if (*ops[i].op == c)
 			return (ops[i].f)
-			i++;
+		i++;
 	return (NULL);
 }
