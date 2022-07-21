@@ -19,11 +19,11 @@ void (*get_op_functions(char c))(char *, va_list, int *)
 			{NULL, NULL}
 	};
 
-	while (ops[i].op != NULL)
+	for (; ops[i].op != NULL; i++)
 	{
 		if (*ops[i].op == c)
 			return (ops[i].f);
 	}
-	i++;
+
 	return (NULL);
 }
