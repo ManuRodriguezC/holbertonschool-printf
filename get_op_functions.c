@@ -12,7 +12,7 @@
 
 int (*get_op_functions(char c))(char *, va_list, int *)
 {
-	funtions ops[] = {
+	functions ops[] = {
 			{"c", op_char},
 			{"s", op_string},
 			{NULL, NULL}
