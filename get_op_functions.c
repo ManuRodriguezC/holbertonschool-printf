@@ -17,7 +17,7 @@ int (*get_op_functions(char c))(char *, va_list, int *)
 			{"s", op_string},
 			{NULL, NULL}
 	};
-
+	int i = 0;
 	while (ops[i].op != '\0')
 		if (*ops[i].op == c)
 			return (ops[i].f);
