@@ -17,7 +17,7 @@ void op_string(char *buffer, va_list ap, int *bf_count)
 
 	ch = va_arg(ap, char *);
 
-	if (!ch)
+	if (ch = NULL)
 		ch = "(null)";
 
 	for (i = 0; ch[i] != '\0'; i++)
