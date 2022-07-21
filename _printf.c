@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0'), continue;
+			if (format[i + 1] == '\0')
+				continue;
 
 			op_functions = get_op_functions(format[i + 1]);
 			if (op_functions == NULL)
@@ -40,7 +41,8 @@ int _printf(const char *format, ...)
 			}
 			else
 				op_functions(buffer, ap, &bf_count);
-			i++, continue;
+			i++;
+			continue;
 		}
 		buffer[bf_count] = format[i];
 		bf_count += 1, i++;
