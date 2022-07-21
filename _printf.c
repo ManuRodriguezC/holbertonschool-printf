@@ -10,8 +10,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, bf_count = 0;
-	char *buffer = NULL;
-	void (*op_function)(char *, va_list, int *);
+	char *buffer;
+	void (*op_functions)(char *, va_list, int *);
 	va_list ap;
 
 	va_start(ap, format), buffer = malloc(sizeof(char) * 1024);
