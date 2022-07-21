@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * get_op_functions - Entry point.
+ * get_op_functions - Function that returns an option.
  *
- * Description: Function that returns a pointer to another function.
+ * @c: compare a character for function.
  *
- * @c: compares a character.
+ * Return: if c = NULL returns a NULL, if c = char returns option.
  *
  */
 
-int (*get_op_functions(char c))(char *, va_list,int *)
+
+int (*get_op_functions(char c))(char *, va_list, int *)
 {
 	funtions ops[] = {
 			{"c", op_char},
 			{"s", op_string},
 			{NULL, NULL}
 	};
-	
 
 	while (ops[i].op != '\0')
 		if (strcmp(ops[i].op, c) == 0)
