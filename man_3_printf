@@ -1,0 +1,81 @@
+_PRINTF(1)                                      Linux Library Manual                                      _PRINTF(1)
+
+NAME
+       _printf - This function receives a formatted string or character.
+
+SYNOPSIS
+       #include main.h
+
+       int printf(const char *format, ...);
+
+DESCRIPTION
+       The function _printf() receives a character or string and concatenates it whit the different arguments passed
+       to it as a second option and then prints each of the formatted characters.
+       This function stores the formatted result in a buffer and pass the output to standard  write()  function  in‐
+       cluded in <unistd.h> library.
+       - All conversion characters and flag characters can be seen below.
+
+   FLAG CHARACTER
+       The  character  %  is  followed by one of the following characters described below.  This specifies that that
+       conversion character should be replaced with the content of the function's arguments.
+
+   CONVERSION CHARACTERS
+   	Character that specifies the type of convertion to be aplly.
+
+	c	This character indicates that the argument to be
+                formatted is of type [char]. The function prints
+		a single character.
+
+	s	This character indicates that the argument to be
+         	formatted is of type [string]. The function prints
+		a string of characters.
+
+	%	No argument is converted. The function prints a 
+		single % character.
+
+	d, i    This character indicates that the argument to be
+		formatted is of type [integer]. The function prints 
+		a number. (d) works with decimal (base 10) numbers.
+
+	b	This character indicates that the argument should
+		be converted to [binary]. The function prints a 
+		binary number.
+
+	u	This character indicates that the argument to be
+		formatted is of type [unsigned decimal]. The 
+		function prints a unsignal decimal (base 10) number.
+
+
+	o	This character indicates that the argument to be
+		formatted is of type [unsignal octal]. The function 
+		prints a unsignal octal number.
+
+	x	This character indicates that the argument to be
+		formatted is of type [unsigned hexadecimal]. The 
+		function use the letters abcdef for conversions.
+
+	X	This character indicates that the argument to be
+		formatted is of type [unsigned hexadecimal]. The 
+		function use the letters ABCDEF for conversions.
+
+   RETURN VALUE
+   	This function returns the number of characters printed (excluding the null byte used
+	to end output to strings).
+
+   EXAMPLES
+       _printf("Hello World!");
+              prints on screen: Hello World!
+
+       _printf(%c, 'a');
+              prints on screen: a
+
+       printf("Print number %d and a character %c", 5, 'F');
+              prints on screen: Print number 5 and a character F
+
+   AUTHORS
+   	Manuel Esteban Rodriguez Castro - Marlon Jose Aguillon Amado
+
+   SEE ALSO
+   	printf(1), printf(2), printf(3), write(3)
+
+GNU                                                  2022-07-21                                           _PRINTF(1)
