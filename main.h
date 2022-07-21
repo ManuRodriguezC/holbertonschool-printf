@@ -20,7 +20,7 @@ typedef struct functions
 	char *op;
 	void (*f)(char *, va_list; int *);
 
-}functions;
+} functions;
 
 
 #endif
