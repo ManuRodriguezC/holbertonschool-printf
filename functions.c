@@ -48,3 +48,33 @@ void op_char(char *buffer, va_list ap, int *bf_count)
 	buffer[*bf_count] = c;
 	(*bf_count)++;
 }
+void op_int(char *buffer, va_list ap, int *bf_count)
+{
+        int args, temp_args;
+
+        args = (int)va_arg(ap, int);
+        temp_args = args;
+
+        /*if (temp_args < 0)
+        {
+                temp_args *= -1;
+        }*/
+        /*printf("%d\n", temp_digits);*/
+
+        while(temp_args > 0)
+        {
+                temp_args = temp_args / 10;
+                (*bf_count)++;
+        }
+        /*printf("%d\n", temp_digits);*/
+        temp_args = args;
+        int pos = *bf_count, num;
+        while(pos >= 1)
+        {
+                num = temp_args % 10;
+                temp_args = temp_args / 10;
+                buffer[pos] = num + '0';
+                pos--;
+        }
+        (*bf_count)++;
+}
