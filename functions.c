@@ -71,7 +71,8 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 		buffer[*bf_count] = 48;
 		(*bf_count)++;
 	}
-	if(args > 0) {
+	if (args > 0) 
+	{
 		while (args != 0)
 		{
 			temp_args = args % 10;
@@ -84,7 +85,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 	{
 		buffer[*bf_count] = '-';
 		(*bf_count)++;
-		while(args != 0)
+		while (args != 0)
 		{
 			temp_num = args % 10 * -1;
 			digits[num] = temp_num;
@@ -93,7 +94,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 		}
 	}
 	num--;
-	while(num >= 0)
+	while (num >= 0)
 	{
 		buffer[*bf_count] = digits[num] + '0';
 		(*bf_count)++;
