@@ -4,6 +4,8 @@ https://cdn.iconscout.com/icon/free/png-128/c-57-1175191.png
 # Descriptions
 
 This project seeks to develop a function similar to printf, in which arguments are received to format them and be printed on the screen.
+# Structure
+![App Screenshot](https://raw.githubusercontent.com/ManuRodriguezC/holbertonschool-printf/e6726a189ca61999deec5ee4bc6ee678525b2e2c/flowchart_printf.jpg)
 
 # Compilation
 
