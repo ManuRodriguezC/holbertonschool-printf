@@ -68,7 +68,8 @@ void op_int(char *buffer, va_list ap, int *bf_count)
         }
         /*printf("%d\n", temp_digits);*/
         temp_args = args;
-        int pos = *bf_count, num;
+        int pos = *bf_count;
+	int num;
         while(pos >= 1)
         {
                 num = temp_args % 10;
