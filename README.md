@@ -57,6 +57,12 @@ Intput: _printf("String:[%s]\n", "Holberton School !");
 
 Output: String:[Holberton School !]
 
+```
+_printf("This is a project made by %i students, %s and %s.\n", 2, Marlon Amado, Esteban Rodriguez);
+
+This is a project made by 2 students, Marlon Amado and Esteban Rodriguez.
+```
+
 # Testing
 
 ## Task
