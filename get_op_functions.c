@@ -16,6 +16,8 @@ void (*get_op_functions(char c))(char *, va_list, int *)
 	functions ops[] = {
 			{"c", op_char},
 			{"s", op_string},
+			{"d", op_int},
+			{"i", op_int,}
 			{NULL, NULL}
 	};
 
