@@ -59,22 +59,19 @@ void op_int(char *buffer, va_list ap, int *bf_count)
         {
                 temp_args *= -1;
         }*/
-        /*printf("%d\n", temp_digits);*/
 
         while(temp_args > 0)
         {
                 temp_args = temp_args / 10;
                 (*bf_count)++;
         }
-        /*printf("%d\n", temp_digits);*/
         temp_args = args;
 	pos = *bf_count;
         while(pos >= 1)
         {
                 num = temp_args % 10;
                 temp_args = temp_args / 10;
-                buffer[pos] = num + '0';
+                buffer[pos-1] = num + '0';
                 pos--;
         }
-        (*bf_count)++;
 }
