@@ -70,7 +70,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 	sh = malloc(sizeof(char) * quantity + 1);
 
 	if (!sh)
-		return (0);
+		return;
 
 	itao(number, sh, 10);
 
