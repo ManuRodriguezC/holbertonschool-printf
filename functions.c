@@ -48,30 +48,51 @@ void op_char(char *buffer, va_list ap, int *bf_count)
 	buffer[*bf_count] = c;
 	(*bf_count)++;
 }
+
+/**
+ * op_int - Function entry point.
+ *
+ * Description: Function that returns a number.
+ *
+ * @buffer: Space for memory.
+ * @ap: Arguments for function.
+ * @bf_count: Iterating pointer.
+ *
+ */
+
 void op_int(char *buffer, va_list ap, int *bf_count)
 {
-        int args, temp_args, pos, num;
+	int args, temp_args, pos, num, start = 1;
 
-        args = (int)va_arg(ap, int);
-        temp_args = args;
+	args = temp_args = (int)va_arg(ap, int);
 
-        /*if (temp_args < 0)
-        {
-                temp_args *= -1;
-        }*/
-
-        while(temp_args > 0)
-        {
-                temp_args = temp_args / 10;
-                (*bf_count)++;
-        }
-        temp_args = args;
+	if (temp_args == 0)
+	{
+		buffer[*bf_count] = 48;
+		(*bf_count)++;
+	}
+	while (args != 0)
+	{
+		if (args < 0)
+		{
+			args *= -1;
+			buffer[*bf_count] = 45;
+			(*bf_count)++;
+		}
+		args /= 10;
+		(*bf_count)++;
+	}
 	pos = *bf_count;
-        while(pos >= 1)
-        {
-                num = temp_args % 10;
-                temp_args = temp_args / 10;
-                buffer[pos-1] = num + '0';
-                pos--;
-        }
+	if (temp_args < 0)
+	{
+		start = 2;
+		temp_args *= -1;
+	}
+	while (pos >= start)
+	{
+		num = temp_args % 10;
+		temp_args /= 10;
+		buffer[pos - 1] = num + '0';
+		pos--;
+	}
 }
