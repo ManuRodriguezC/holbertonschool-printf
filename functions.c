@@ -48,3 +48,36 @@ void op_char(char *buffer, va_list ap, int *bf_count)
 	buffer[*bf_count] = c;
 	(*bf_count)++;
 }
+
+
+/**
+ * op_int - Function entry point.
+ *
+ * Description: Function that returns a character.
+ *
+ * @buffer: Space for memory.
+ * @ap: Arguments for function.
+ * @bf_count: Iterating pointer.
+ */
+void op_int(char *buffer, va_list ap, *bf_count)
+{
+	int number, quantity, i;
+	char *ch = NULL;
+
+	number = va_arg(ap, int);
+	quantity = (int)floor(log(number) + 1);
+	ch = malloc(sizeof(char) * quantity + 1);
+
+	if (!ch)
+		return (0);
+
+	itao(n, ch, 10);
+
+	for (i = 0; ch[i] != '\0'; i++)
+	{
+		buffer[*bf_count] = ch[i];
+		(*bf_count)++;
+	}
+
+	free(ch);
+}
