@@ -59,25 +59,26 @@ void op_char(char *buffer, va_list ap, int *bf_count)
  * @ap: Arguments for function.
  * @bf_count: Iterating pointer.
  */
-void op_int(char *buffer, va_list ap, *bf_count)
+
+void op_int(char *buffer, va_list ap, int *bf_count)
 {
 	int number, quantity, i;
-	char *ch = NULL;
+	char *sh = NULL;
 
 	number = va_arg(ap, int);
 	quantity = (int)floor(log(number) + 1);
-	ch = malloc(sizeof(char) * quantity + 1);
+	sh = malloc(sizeof(char) * quantity + 1);
 
-	if (!ch)
+	if (!sh)
 		return (0);
 
-	itao(n, ch, 10);
+	itao(n, sh, 10);
 
-	for (i = 0; ch[i] != '\0'; i++)
+	for (i = 0; sh[i] != '\0'; i++)
 	{
-		buffer[*bf_count] = ch[i];
+		buffer[*bf_count] = sh[i];
 		(*bf_count)++;
 	}
 
-	free(ch);
+	free(sh);
 }
