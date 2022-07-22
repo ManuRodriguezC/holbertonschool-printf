@@ -62,37 +62,41 @@ void op_char(char *buffer, va_list ap, int *bf_count)
 
 void op_int(char *buffer, va_list ap, int *bf_count)
 {
-	int args, temp_args, pos, num, start = 1;
+	int args, temp_args, temp_num, num = 0, digits[15];
 
 	args = temp_args = (int)va_arg(ap, int);
 
-	if (temp_args == 0)
+	if (args == 0)
 	{
 		buffer[*bf_count] = 48;
 		(*bf_count)++;
 	}
-	while (args != 0)
-	{
-		if (args < 0)
+	if(args > 0) {
+		while (args != 0)
 		{
-			args *= -1;
-			buffer[*bf_count] = 45;
-			(*bf_count)++;
+			temp_args = args % 10;
+			args /= 10;
+			digits[num] = temp_args;
+			num++;
 		}
-		args /= 10;
+	}
+	else if (args < 0)
+	{
+		buffer[*bf_count] = '-';
 		(*bf_count)++;
+		while(args != 0)
+		{
+			temp_num = args % 10 * -1;
+			digits[num] = temp_num;
+			args /= 10;
+			num++;
+		}
 	}
-	pos = *bf_count;
-	if (temp_args < 0)
+	num--;
+	while(num >= 0)
 	{
-		start = 2;
-		temp_args *= -1;
-	}
-	while (pos >= start)
-	{
-		num = temp_args % 10;
-		temp_args /= 10;
-		buffer[pos - 1] = num + '0';
-		pos--;
+		buffer[*bf_count] = digits[num] + '0';
+		(*bf_count)++;
+		num--;
 	}
 }
