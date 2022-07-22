@@ -64,7 +64,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 {
 	int args, temp_args, pos, num, start = 1;
 
-	args = temp_args = (int)va_arg(ap, int);
+	args = temp_args = va_arg(ap, int);
 
 	if (temp_args == 0)
 	{
