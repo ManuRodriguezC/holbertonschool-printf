@@ -10,9 +10,10 @@
 
 /* Prototypes */
 int _printf(const char *format, ...);
+void (*get_op_functions(char c))(char *, va_list, int *);
 void op_string(char *buffer, va_list ap, int *bf_count);
 void op_char(char *buffer, va_list ap, int *bf_count);
-void (*get_op_functions(char c))(char *, va_list, int *);
+void op_int(char *buffer, va_list ap, *bf_count);
 
 /* Structure */
 typedef struct functions
