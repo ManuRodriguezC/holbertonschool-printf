@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <math.h>
+#include <limits.h>
 
 
 /* Prototypes */
