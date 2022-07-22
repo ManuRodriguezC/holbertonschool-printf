@@ -72,7 +72,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 	if (!sh)
 		return (0);
 
-	itao(n, sh, 10);
+	itao(number, sh, 10);
 
 	for (i = 0; sh[i] != '\0'; i++)
 	{
