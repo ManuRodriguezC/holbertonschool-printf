@@ -71,7 +71,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 		buffer[*bf_count] = 48;
 		(*bf_count)++;
 	}
-	if (args > 0) 
+	if (args > 0)
 	{
 		while (args != 0)
 		{
