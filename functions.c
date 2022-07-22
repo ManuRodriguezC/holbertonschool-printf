@@ -50,7 +50,7 @@ void op_char(char *buffer, va_list ap, int *bf_count)
 }
 void op_int(char *buffer, va_list ap, int *bf_count)
 {
-        int args, temp_args;
+        int args, temp_args, pos, num;
 
         args = (int)va_arg(ap, int);
         temp_args = args;
@@ -68,8 +68,7 @@ void op_int(char *buffer, va_list ap, int *bf_count)
         }
         /*printf("%d\n", temp_digits);*/
         temp_args = args;
-        int pos = *bf_count;
-	int num;
+	pos = *bf_count;
         while(pos >= 1)
         {
                 num = temp_args % 10;
