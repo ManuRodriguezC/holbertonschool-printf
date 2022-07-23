@@ -102,9 +102,20 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 	}
 }
 
+/**
+ * op_binary - Function entry point.
+ *
+ * Description: Function that return a binary number.
+ *
+ * @buffer: Space for memory.
+ * @ap: Arguments for funtion.
+ * @bf_count: iterating pointer.
+ */
+
 void op_binary(char *buffer, va_list ap, int *bf_count)
 {
 	int args, bin = 0, i = 0, digits[100];
+
 	args = (int)va_arg(ap, int);
 
 	if (args == 0)
