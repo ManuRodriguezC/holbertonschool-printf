@@ -18,6 +18,7 @@ void (*get_op_functions(char c))(char *, va_list, int *)
 			{"s", op_string},
 			{"d", op_int},
 			{"i", op_int},
+			{"b", op_binary},
 			{NULL, NULL}
 	};
 

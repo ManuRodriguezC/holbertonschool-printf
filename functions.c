@@ -101,3 +101,26 @@ void op_int(char *buffer, va_list ap, int *bf_count)
 		num--;
 	}
 }
+
+void op_binary(char *buffer, va_list ap, int *bf_count)
+{
+	int args, bin = 0, i = 0, place = 0, digits[100];
+	args = (int)va_arg(ap, int);
+
+	while (args)
+	{
+		bin = args % 2;
+		args /= 2;
+		digits[i] = bin;
+		i++;
+	}
+	i--;
+	while (i >= 0)
+	{
+		buffer[*bf_count] = digits[i] + '0';
+		(*bf_count)++;
+		i--;
+	}
+}
+
+
