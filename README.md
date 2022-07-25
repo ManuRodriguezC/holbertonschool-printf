@@ -37,7 +37,7 @@ All your files will be compiled on Ubuntu 20.04 LTS using gcc using the options 
 
 ### Integer
 
-Intput: _printf("Unsigned octal:[%o]\n", ui);
+Intput: _printf("Unsigned octal:[%i]\n", ui);
 
 Output: Unsigned octal:[20000001777]
 
